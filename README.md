@@ -9,7 +9,6 @@ This script converts the Wazuh online documentation into a single PDF file. It u
 To run this script, you need:
 
 A patched version of wkhtmltopdf which supports advanced rendering features. You can download the patched version from the wkhtmltopdf downloads page.
-
 Ghostscript (gs) to merge the individual PDF files.
 
 ## How to Use
@@ -22,7 +21,7 @@ Ensure you have the patched version of wkhtmltopdf installed. This is crucial fo
 
 Clone this repository to your local machine:
 
-git clone <repository-url>
+`git clone <repository-url>`
 
 ### Step 3: Make the Script Executable
 
@@ -44,23 +43,18 @@ Execute the script by running:
 The script performs the following actions:
 
 Generates a list of URLs from the Wazuh documentation.
-
 Cleans and filters the list to include only HTML pages.
-
 Converts each HTML page into an individual PDF file.
-
 Merges all the individual PDFs into a single PDF named merged-output.pdf.
 
 ## Output
 
 The final merged PDF containing the Wazuh documentation will be saved as merged-output.pdf in the current directory.
-
 Note: The generated PDF is not a perfect replica of the online documentation. Images and screenshots are missing, and the document is optimized to use as little storage space as possible.
 
 ## Notes
 
 It is crucial to use the patched version of wkhtmltopdf, as the standard version may not render the documentation correctly.
-
 Ensure that no-footer.css is available in the same directory, as it is used to remove unwanted footer elements from the PDFs.
 
 ## Dependencies
