@@ -1,42 +1,55 @@
-Convert Wazuh Online Documentation to PDF
+# Convert Wazuh Online Documentation to PDF
 
-Overview
+## Overview
 
-This script allows you to convert the Wazuh online documentation into a single PDF file. It uses wget to retrieve the list of URLs, filters and cleans the list, and then converts each HTML page to PDF using wkhtmltopdf. Finally, all individual PDF files are merged into a single document.
+This script converts the Wazuh online documentation into a single PDF file. It uses wget to retrieve the list of URLs, filters and cleans the list, and then converts each HTML page to a PDF using wkhtmltopdf. Finally, all individual PDF files are merged into one document using Ghostscript.
 
-Prerequisites
+## Prerequisites
 
 To run this script, you need:
 
-A patched version of wkhtmltopdf which supports advanced rendering features. You can download the patched version from wkhtmltopdf downloads page.
+A patched version of wkhtmltopdf which supports advanced rendering features. You can download the patched version from the wkhtmltopdf downloads page.
 
 Ghostscript (gs) to merge the individual PDF files.
 
-How to Use
+## How to Use
 
-Download wkhtmltopdf: Make sure you have the patched version of wkhtmltopdf installed. This is crucial for proper HTML to PDF conversion with styles and rendering. You can download it here.
+### Step 1: Download wkhtmltopdf
 
-Clone the Repository or Save the Script: Copy the script file named create-wazuh-pdf.sh to your local machine.
+Ensure you have the patched version of wkhtmltopdf installed. This is crucial for proper HTML to PDF conversion with styles and rendering. You can download it here.
 
-Make the Script Executable: Run the following command to make the script executable:
+Step 2: Clone the Repository
 
+Clone this repository to your local machine:
+
+git clone <repository-url>
+
+Step 3: Make the Script Executable
+
+Navigate to the directory and make the script executable:
+
+cd <repository-directory>
 chmod +x create-wazuh-pdf.sh
 
-**Ensure CSS File is Available: The script requires a CSS file named no-footer.css to style the PDF documents. This file must be in the same directory as the script.
+Step 4: Ensure CSS File is Available
 
-Run the Script: Execute the script by running:
+The script requires a CSS file named no-footer.css to style the PDF documents. This file must be in the same directory as the script. Ensure that no-footer.css is present before running the script.
+
+Step 5: Run the Script
+
+Execute the script by running:
 
 ./create-wazuh-pdf.sh
 
-The script will perform the following actions:
+The script performs the following actions:
 
-Generate a list of URLs from the Wazuh documentation.
+Generates a list of URLs from the Wazuh documentation.
 
-Clean and filter the list to include only HTML pages.
+Cleans and filters the list to include only HTML pages.
 
-Convert each HTML page to an individual PDF file.
+Converts each HTML page into an individual PDF file.
 
-Merge all the individual PDFs into a single PDF named merged-output.pdf.
+Merges all the individual PDFs into a single PDF named merged-output.pdf.
 
 Output
 
@@ -67,4 +80,16 @@ You are using the patched version of wkhtmltopdf.
 The CSS file (no-footer.css) is available in the same directory.
 
 All dependencies (wget, wkhtmltopdf, gs) are correctly installed and accessible from your command line.
+
+License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+Contributing
+
+Contributions are welcome! If you have suggestions for improvements, feel free to open an issue or submit a pull request.
+
+Contact
+
+For any questions or issues, feel free to reach out via the issues page of this repository.
 
